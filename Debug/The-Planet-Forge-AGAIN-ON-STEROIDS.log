@@ -1,0 +1,10 @@
+﻿  Application.cpp
+Application.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "_glfwInit" in Funktion "_main".
+Application.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "_glfwTerminate" in Funktion "_main".
+Application.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "_glfwCreateWindow" in Funktion "_main".
+Application.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "_glfwWindowShouldClose" in Funktion "_main".
+Application.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "_glfwPollEvents" in Funktion "_main".
+Application.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "_glfwMakeContextCurrent" in Funktion "_main".
+Application.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "_glfwSwapBuffers" in Funktion "_main".
+G:\gerettet\Documents2010\GitHub\The-Planet-Forge-AGAIN-ON-STEROIDS\lib\GLFW\lib-vc2015\glfw3.lib : warning LNK4272: Bibliothekcomputertyp "x64" steht in Konflikt mit dem Zielcomputertyp "x86"
+G:\gerettet\Documents2010\GitHub\The-Planet-Forge-AGAIN-ON-STEROIDS\Debug\The-Planet-Forge-AGAIN-ON-STEROIDS.exe : fatal error LNK1120: 7 nicht aufgelöste Externe

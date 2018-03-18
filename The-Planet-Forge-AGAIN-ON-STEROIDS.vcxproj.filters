@@ -4,10 +4,41 @@
     <Filter Include="src">
       <UniqueIdentifier>{d2006ad8-e6ac-4252-a559-2dca24410677}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\graphics">
+      <UniqueIdentifier>{2db3a5a6-e633-4599-9251-ff59b1fd62ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{ba3406f4-e92d-44a0-af21-b0db131e2995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\shaders">
+      <UniqueIdentifier>{a6c84022-77bb-4d7e-aa15-6058bc5aa3b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{7fde50dc-5021-429f-b2c1-3363d35d9cee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ErrorHandler.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Shader.h">
+      <Filter>src\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ErrorHandler.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Basic.shader">
+      <Filter>res\shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

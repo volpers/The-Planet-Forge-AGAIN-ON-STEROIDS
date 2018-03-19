@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <string>
+#include <unordered_map>
 
 enum class ShaderType
 {
@@ -14,12 +15,24 @@ struct ShaderProgramSource
 };
 
 class Shader
-{
-public:
-	Shader() = default;
-	static unsigned CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
-	static ShaderProgramSource ParseShader(const std::string& filepath);
-
+{	 
 private:
-	static unsigned CompileShader(unsigned type, const std::string& source);
+	unsigned m_RendererID;
+	std::string m_FilePath;
+	std::unordered_map<std::string, int> m_UniformLocationCache;
+	
+public:
+	Shader(const std::string& filepath);
+	~Shader();
+
+	void Bind() const;
+	void Unbind() const;
+
+	void SetUniform4f(const std::string& name, float v0, float v1, float v2, float v3);	 		
+
+private:	
+	unsigned CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
+	int GetUniformLocation(const std::string& name);
+	unsigned CompileShader(unsigned type, const std::string& source);
+	ShaderProgramSource ParseShader(const std::string& filepath);
 };

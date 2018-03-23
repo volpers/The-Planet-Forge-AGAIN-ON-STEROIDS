@@ -1,7 +1,14 @@
 ﻿  Application.cpp
+  ErrorHandler.cpp
+  IndexBuffer.cpp
+  Renderer.cpp
   Shader.cpp
+  stb_image.cpp
+  Texture.cpp
+  glm.cpp
   VertexArray.cpp
 c:\users\nklei\source\repos\github\the-planet-forge-again-on-steroids\src\vertexarray.cpp(24): warning C4312: "Typumwandlung": Konvertierung von "unsigned int" in größeren Typ "const void *"
+  VertexBuffer.cpp
   VertexBufferLayout.cpp
   Code wird generiert...
 LINK : warning LNK4098: Standardbibliothek "MSVCRT" steht in Konflikt mit anderen Bibliotheken; /NODEFAULTLIB:Bibliothek verwenden.

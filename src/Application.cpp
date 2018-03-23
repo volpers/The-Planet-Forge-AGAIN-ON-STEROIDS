@@ -8,6 +8,10 @@
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "VertexArray.h"
+#include "Renderer.h"
+#include "Texture.h"
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
 
 
 using namespace std;
@@ -41,10 +45,10 @@ int main(void)
 	cout << "OpenGL version: " <<  glGetString(GL_VERSION);
 
 	float positions[] = {
-		-0.5f, -0.5f,
-		0.5f, -0.5f,
-		0.5f, 0.5f,
-		-0.5f, 0.5f 
+		-0.5f, -0.5f, 0.0f, 0.0f,
+		0.5f, -0.5f, 1.0f, 0.0f,
+		0.5f, 0.5f, 1.0f, 1.0f,	
+		-0.5f, 0.5f, 0.0f, 1.0f 
 	};
 
 	unsigned indices[] = {
@@ -52,31 +56,46 @@ int main(void)
 		2,3,0
 	};
 
+	GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
+	GLCall(glEnable(GL_BLEND));
+
 	unsigned vao;
 	GLCall(glGenVertexArrays(1, &vao));
 	GLCall(glBindVertexArray(vao));
 
 	//Vertex array stuff
 	VertexArray va;
-	VertexBuffer vb(positions, 4 * 2 * sizeof(float));
+	VertexBuffer vb(positions, 4 * 4 * sizeof(float));
 	
 	VertexBufferLayout layout;
 	layout.Push<float>(2);	
+	layout.Push<float>(2);
 	va.AddBuffer(vb, layout);
 
 	//Index Buffer
 	IndexBuffer ib(indices, 6);
 	
+	glm::mat4 projectionMatrix = glm::ortho(-2.0f, 2.0f, -1.5f, 1.5f, -1.0f, 1.0f);
+
 	//Shader
 	Shader shader("Basic.shader");
 	shader.Bind();
 	shader.SetUniform4f("u_Color", 0.2f, 0.3f, 0.8f, 1.0f);
-	
+	shader.SetUniformMat4F("u_MVP", projectionMatrix);
+
+
+	Texture texture("res/texture.png");
+	texture.Bind();
+	shader.SetUniform1i("u_Texture", 0);
+
+
 	//Unbind everything
 	va.Unbind();
 	vb.Unbind();
 	ib.Unbind();
 	shader.Unbind();
+
+	Renderer renderer;
 
 	float r = 0.0f;
 	float increment = 0.05f;
@@ -85,15 +104,13 @@ int main(void)
 	while (!glfwWindowShouldClose(window))
 	{
 		/* Render here */
-		glClear(GL_COLOR_BUFFER_BIT);
+		renderer.Clear();
 
 		shader.Bind();
-		shader.SetUniform4f("u_Color", r, 0.3f, 0.8f, 1.0f); 		
+		//shader.SetUniform4f("u_Color", r, 0.3f, 0.8f, 1.0f); 		
 		
-		va.Bind();
-		ib.Bind();
+		renderer.Draw(va, ib, shader);
 
-		GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
 		
 		if(r > 1.0f)
 		{

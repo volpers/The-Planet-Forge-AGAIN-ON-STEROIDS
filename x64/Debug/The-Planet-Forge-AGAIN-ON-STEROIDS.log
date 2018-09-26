@@ -1,2 +1,9 @@
 ﻿  Application.cpp
-  The-Planet-Forge-AGAIN-ON-STEROIDS.vcxproj -> C:\Users\nklei\Documents\GitHub\The-Planet-Forge-AGAIN-ON-STEROIDS\x64\Debug\The-Planet-Forge-AGAIN-ON-STEROIDS.exe
+  Mesh.cpp
+c:\users\nklei\documents\github\the-planet-forge-again-on-steroids\src\mesh.cpp(4): error C2530: "Mesh::positions": Verweise müssen initialisiert werden
+c:\users\nklei\documents\github\the-planet-forge-again-on-steroids\src\mesh.cpp(4): error C2530: "Mesh::indices": Verweise müssen initialisiert werden
+c:\users\nklei\documents\github\the-planet-forge-again-on-steroids\src\mesh.cpp(4): error C2530: "Mesh::vertexBuffer": Verweise müssen initialisiert werden
+c:\users\nklei\documents\github\the-planet-forge-again-on-steroids\src\mesh.cpp(4): error C2530: "Mesh::indexBuffer": Verweise müssen initialisiert werden
+c:\users\nklei\documents\github\the-planet-forge-again-on-steroids\src\mesh.cpp(7): warning C4267: "Argument": Konvertierung von "size_t" nach "unsigned int", Datenverlust möglich
+c:\users\nklei\documents\github\the-planet-forge-again-on-steroids\src\mesh.cpp(8): warning C4267: "Argument": Konvertierung von "size_t" nach "unsigned int", Datenverlust möglich
+  Code wird generiert...

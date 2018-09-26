@@ -22,6 +22,7 @@
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\ErrorHandler.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
+    <ClCompile Include="src\Mesh.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\stb_image.cpp" />
@@ -34,6 +35,7 @@
   <ItemGroup>
     <ClInclude Include="src\ErrorHandler.h" />
     <ClInclude Include="src\IndexBuffer.h" />
+    <ClInclude Include="src\Mesh.h" />
     <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\stb_image.h" />

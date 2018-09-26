@@ -63,6 +63,9 @@
     <ClCompile Include="src\vendor\glm\detail\glm.cpp">
       <Filter>src\vendor\glm</Filter>
     </ClCompile>
+    <ClCompile Include="src\Mesh.cpp">
+      <Filter>src\graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Shader.h">
@@ -523,6 +526,9 @@
     </ClInclude>
     <ClInclude Include="src\vendor\glm\gtx\wrap.hpp">
       <Filter>src\vendor\glm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mesh.h">
+      <Filter>src\graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
